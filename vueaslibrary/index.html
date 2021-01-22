@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <title>Vue 101</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container" id="app">
+      <awesome-button></awesome-button>
+      <game-card v-for="game in games" :game-data="game" :key="game.name"></game-card>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    Vue.component('awesome-button', {
+      template: `<div class="mt-2"><button class="btn btn-primary btn-sm" @click="clickHandler">Click me for some awesomeness</button></div>`,
+      methods: {
+        clickHandler() {
+          alert('YAAAS 😎');
+        }
+      }
+    });
+
+    Vue.component('game-card', {
+      props: ['gameData'],
+
+      data() {
+        return {
+          game: {...this.gameData}
+        }
+      },
+
+      template: `
+        <div class="card mt-2 p-2">
+        <div class="row p-1">
+          <div class="col-md-8">
+            <h2>{{ game.name }} - <small>{{ game.console }}</small></h2>
+          </div>
+          <div class="col-md-2">
+            <span v-for="heart in game.rating">❤️</span>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-success btn-sm" @click="increaseRating"> + </button>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-warning btn-sm"@click="decreaseRating"> - </button>
+          </div>
+          <hr>
+        </div>
+        </div>
+      `,
+
+      methods: {
+        increaseRating() {
+          if (this.game.rating < 5)
+          this.game.rating++;
+        },
+        decreaseRating() {
+          this.game.rating--
+        }
+      }
+    });
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        games: [
+          { name: 'Super Mario 64', console: 'Nintendo 64', rating: 4 },
+          { name: 'The Legend of Zelda Ocarina of Time', console: 'Nintendo 64', rating: 5 },
+          { name: 'Secret of Mana', console: 'Super Nintendo', rating: 4 },
+          { name: 'Fallout 76', console: 'Multiple', rating: 1 },
+          { name: 'Super Metroid', console: 'Super Nintendo', rating: 6 }
+        ]
+      }
+    });
+  </script>
+</body>
+
+</html>
