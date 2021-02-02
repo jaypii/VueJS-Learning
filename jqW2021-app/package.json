@@ -64,7 +64,7 @@
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "serve": "vue-cli-service serve"
+    "serve": "vue-cli-service serve --open"
   },
   "version": ""
 }

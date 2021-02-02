@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div class="chart-wrapper"> 
-      <chart :options="chartOptionsBar"></chart>
+    <div class="card mt-2">
+      <div class="chart-wrapper"> 
+        <chart :options="chartOptionsBar"></chart>
+      </div>
     </div>
     <hr>
-    <div class="chart-wrapper">
-      <chart :options="chartOptionsLine"></chart>
+    <div class="card mt-2">
+      <div class="chart-wrapper">
+        <chart :options="chartOptionsLine"></chart>
+      </div>
     </div>
   </div>
 </template>
@@ -80,7 +84,7 @@ export default {
 <style scoped>
   .chart-wrapper {
     width: 100%;
-    height: 700px;
+    height: 500px;
   }
   .echarts {
     width: 100%;
