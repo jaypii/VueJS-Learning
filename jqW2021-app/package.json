@@ -25,20 +25,20 @@
   ],
   "bundleDependencies": false,
   "dependencies": {
-    "core-js": "^2.6.5",
+    "core-js": "^2.6.12",
     "jqwidgets-scripts": "^8.1.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.12"
   },
   "deprecated": false,
   "description": "Please refer to its documentation:   - [Getting Started](https://github.com/jqwidgets/jqW2021-app/blob/master/README.md#getting-started)    - [jQWidgets Vue Documentation](http://www.jqwidgets.com/vue-components-documentation/)",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "babel-eslint": "^10.0.1",
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
